@@ -1,0 +1,31 @@
+{
+  "name": "google-books",
+  "version": "1.0.0",
+  "description": "Google Books",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.9.1"
+  },
+  "engines": {
+    "node": "14.15.4",
+    "npm": "7.5.3"
+  }
+}
